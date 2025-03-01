@@ -15,7 +15,7 @@
       "title": "搜尋",
       "title$keyword": "搜尋：{{keyword}}"
     },
-    "title": "文章",
+    "title": "財經週報",
     "top": {
       "confirm": "確定置頂這篇文章嗎？",
       "success": "置頂成功",

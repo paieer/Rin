@@ -143,12 +143,9 @@ function NavBar({ menu, onClick }: { menu: boolean, onClick?: () => void }) {
         <>
             <NavItem menu={menu} onClick={onClick} title={t('article.title')}
                 selected={location === "/" || location.startsWith('/feed')} href="/" />
-            <NavItem menu={menu} onClick={onClick} title={t('timeline')} selected={location === "/timeline"} href="/timeline" />
-            <NavItem menu={menu} onClick={onClick} title={t('hashtags')} selected={location === "/hashtags"} href="/hashtags" />
             <NavItem menu={menu} onClick={onClick} when={profile?.permission == true} title={t('writing')}
                 selected={location.startsWith("/writing")} href="/writing" />
             <NavItem menu={menu} onClick={onClick} title={t('friends.title')} selected={location === "/friends"} href="/friends" />
-            <NavItem menu={menu} onClick={onClick} title={t('about.title')} selected={location === "/about"} href="/about" />
             <NavItem menu={menu} onClick={onClick} when={profile?.permission == true} title={t('settings.title')}
                 selected={location === "/settings"}
                 href="/settings" />
@@ -162,8 +159,7 @@ function LanguageSwitch({ className }: { className?: string }) {
     const languages = [
         { code: 'en', name: 'English' },
         { code: 'zh-CN', name: '简体中文' },
-        { code: 'zh-TW', name: '繁體中文' },
-        { code: 'ja', name: '日本語' }
+        { code: 'zh-TW', name: '繁體中文' }
     ]
     return (
         <div className={className + " flex flex-row items-center"}>

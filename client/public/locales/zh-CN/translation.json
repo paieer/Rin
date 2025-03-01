@@ -15,7 +15,7 @@
       "title": "搜索",
       "title$keyword": "搜索：{{keyword}}"
     },
-    "title": "文章",
+    "title": "财经周报",
     "top": {
       "confirm": "确定置顶这篇文章吗？",
       "success": "置顶成功",

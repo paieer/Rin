@@ -15,7 +15,7 @@
       "title": "Search",
       "title$keyword": "Search: {{keyword}}"
     },
-    "title": "Articles",
+    "title": "Financial",
     "top": {
       "confirm": "Are you sure you want to top this article?",
       "success": "Topped successfully",
