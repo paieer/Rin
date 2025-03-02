@@ -16,6 +16,7 @@ import {siteName} from "../utils/constants";
 import {timeago} from "../utils/timeago";
 import {Button} from "../components/button";
 import {Tips} from "../components/tips";
+import {StockChart} from "../components/chart";
 import {useLoginModal} from "../hooks/useLoginModal";
 import mermaid from "mermaid";
 import {AdjacentSection} from "../components/adjacent_feed.tsx";
@@ -278,6 +279,7 @@ export function FeedPage({ id, TOC, clean }: { id: string, TOC: () => JSX.Elemen
                   </div>
                 </div>
                 <Markdown content={feed.content} />
+                <StockChart />
                 <div className="mt-6 flex flex-col gap-2">
                   {feed.hashtags.length > 0 && (
                     <div className="flex flex-row flex-wrap gap-x-2">
