@@ -16,7 +16,7 @@ import {siteName} from "../utils/constants";
 import {timeago} from "../utils/timeago";
 import {Button} from "../components/button";
 import {Tips} from "../components/tips";
-import {StockChart} from "../components/chart";
+import StockChart from "../components/chart";
 import {useLoginModal} from "../hooks/useLoginModal";
 import mermaid from "mermaid";
 import {AdjacentSection} from "../components/adjacent_feed.tsx";

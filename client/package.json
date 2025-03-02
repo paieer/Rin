@@ -30,6 +30,7 @@
     "react-loading": "^2.0.3",
     "react-modal": "^3.16.1",
     "react-select": "^5.8.0",
+    "recharts": "^2.15.1",
     "reactjs-popup": "^2.0.6",
     "remark-github-blockquote-alert": "^1.2.1",
     "remixicon": "^4.2.0",
