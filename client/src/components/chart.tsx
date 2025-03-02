@@ -145,13 +145,25 @@ const StockChart = () => {
   const filteredData = formatData.filter((_, index) => index % 10 === 0);
   
   // 计算滚动平均线 (20天移动平均线)
-  const movingAverage = (data, field, window) => {
+  interface StockData {
+    date: string;
+    close: number;
+    high: number;
+    low: number;
+    open: number;
+    volume: number;
+    formattedDate?: string;
+    fullDate?: string;
+    ma?: number | null;
+  }
+
+  const movingAverage = (data: StockData[], field: keyof StockData, window: number): StockData[] => {
     return data.map((item, index, array) => {
       if (index < window - 1) return { ...item, ma: null };
       
       let sum = 0;
       for (let i = 0; i < window; i++) {
-        sum += array[index - i][field];
+        sum += array[index - i][field] as number;
       }
       return { ...item, ma: sum / window };
     });
@@ -164,7 +176,7 @@ const StockChart = () => {
   const maxValue = Math.max(...formatData.map(item => item.high)) + 1;
   
   // 处理图表类型切换
-  const handleChartTypeChange = (type) => {
+  const handleChartTypeChange = (type: 'close' | 'candlestick' | 'volume') => {
     setChartType(type);
   };
   
@@ -172,7 +184,15 @@ const StockChart = () => {
   const maxVolume = Math.max(...formatData.map(item => item.volume));
   
   // 自定义工具提示
-  const CustomTooltip = ({ active, payload, label }) => {
+  interface TooltipProps {
+    active?: boolean;
+    payload?: {
+      payload: StockData;
+    }[];
+    label?: string;
+  }
+
+  const CustomTooltip = ({ active, payload }: TooltipProps) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       
