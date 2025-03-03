@@ -59,7 +59,7 @@ function Footer() {
                             setDoubleClickTimes(doubleClickTimes + 1)
                         }
                     }}>
-                        © 2024 Powered by OpenCompanyReport
+                        © 2024 OpenCompanyReport
                     </span>
                     {config.get<boolean>('rss') && <>
                         <Spliter />
