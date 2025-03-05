@@ -82,9 +82,6 @@ export function FeedsPage() {
                             {listState === 'draft' ? t('draft_bin') : listState === 'normal' ? t('article.title') : t('unlisted')}
                         </p>
                         <div className="flex flex-row justify-between">
-                            <p className="text-sm mt-4 text-neutral-500 font-normal">
-                                {t('article.total$count', { count: feeds[listState]?.size })}
-                            </p>
                             {profile?.permission &&
                                 <div className="flex flex-row space-x-4">
                                     <Link href={listState === 'draft' ? '/?type=normal' : '/?type=draft'} className={`text-sm mt-4 text-neutral-500 font-normal ${listState === 'draft' ? "text-theme" : ""}`}>
