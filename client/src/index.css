@@ -208,3 +208,8 @@ a.toc-link {
 .is-active-link::before {
   @apply bg-theme;
 }
+
+iframe {
+  border: none;
+  border-radius: 12px;
+}
