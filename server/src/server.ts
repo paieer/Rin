@@ -1,5 +1,5 @@
 import cors from "@elysiajs/cors";
-import { serverTiming } from "@elysiajs/server-timing";
+// import { serverTiming } from "@elysiajs/server-timing";
 import { Elysia } from "elysia";
 import { CommentService } from "./services/comments";
 import { FaviconService } from "./services/favicon";
@@ -23,11 +23,6 @@ export const app = () =>
         maxAge: 600,
         credentials: true,
         preflight: true,
-      })
-    )
-    .use(
-      serverTiming({
-        enabled: false,
       })
     )
     .use(UserService())
