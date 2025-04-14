@@ -7,7 +7,7 @@ import * as schema from "./db/schema"
 import { app } from "./server"
 import { friendCrontab } from "./services/friends"
 import { rssCrontab } from "./services/rss"
-import { CacheImpl } from "./utils/cache"
+import { PublicCache, CacheImpl } from "./utils/cache"
 import { dbToken, envToken } from "./utils/di"
 export type DB = DrizzleD1Database<typeof import("./db/schema")>
 
@@ -48,7 +48,7 @@ export default {
         await rssCrontab(env)
         break
       case "1 0 * * 1":
-        new CacheImpl("cache").clear()
+        await PublicCache().clear()
         break
     }
   },
