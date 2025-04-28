@@ -54,7 +54,10 @@ compatibility_date = "2024-05-29"
 node_compat = true
 
 [triggers]
-crons = ["*/20 * * * *" , "1 0 * * 1"]
+crons = ["*/20 * * * *" , "1 1 * * 1"]
+
+[observability]
+enabled = true
 
 [vars]
 FRONTEND_URL = "${FRONTEND_URL}"

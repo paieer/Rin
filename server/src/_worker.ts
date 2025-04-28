@@ -47,8 +47,9 @@ export default {
         await friendCrontab(env, ctx)
         await rssCrontab(env)
         break
-      case "1 0 * * 1":
+      case "1 1 * * 1":
         await PublicCache().clear()
+        console.log("Weekly Cache cleared")
         break
     }
   },
